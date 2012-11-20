@@ -13,6 +13,8 @@ namespace RxSchedulers.Switch
     /// </summary>
     public static class SchedulerSwitch
     {
+        #region Constructors and Destructors
+
         /// <summary>
         /// Initializes static members of the <see cref="SchedulerSwitch"/> class.
         /// </summary>
@@ -25,15 +27,29 @@ namespace RxSchedulers.Switch
             SchedulerSwitch.GetNewThreadScheduler = () => NewThreadScheduler.Default;
         }
 
+        #endregion
+
+        #region Public Properties
+
+        /// <summary>
+        /// Gets or sets the current thread scheduler (normally <see cref="CurrentThreadScheduler.Instance"/>).
+        /// </summary>
+        public static Func<IScheduler> GetCurrentThreadScheduler { get; set; }
+
+        /// <summary>
+        /// Gets or sets the dispatcher scheduler (normally <see cref="DispatcherScheduler.Current"/>).
+        /// </summary>
+        public static Func<IScheduler> GetDispatcherScheduler { get; set; }
+
         /// <summary>
         /// Gets or sets the get immediate scheduler (normally <see cref="Scheduler.Immediate"/>).
         /// </summary>
         public static Func<IScheduler> GetImmediateScheduler { get; set; }
 
         /// <summary>
-        /// Gets or sets the dispatcher scheduler (normally <see cref="DispatcherScheduler.Current"/>).
+        /// Gets or sets the get new thread scheduler (normally <see cref="NewThreadScheduler.Default"/>).
         /// </summary>
-        public static Func<IScheduler> GetDispatcherScheduler { get; set; }
+        public static Func<IScheduler> GetNewThreadScheduler { get; set; }
 
         /// <summary>
         /// Gets or sets the task pool scheduler (normally <see cref="TaskPoolScheduler.Default"/>).
@@ -45,14 +61,6 @@ namespace RxSchedulers.Switch
         /// </summary>
         public static Func<IScheduler> GetThreadPoolScheduler { get; set; }
 
-        /// <summary>
-        /// Gets or sets the current thread scheduler (normally <see cref="CurrentThreadScheduler.Instance"/>).
-        /// </summary>
-        public static Func<IScheduler> GetCurrentThreadScheduler { get; set; }
-
-        /// <summary>
-        /// Gets or sets the get new thread scheduler (normally <see cref="NewThreadScheduler.Default"/>).
-        /// </summary>
-        public static Func<IScheduler> GetNewThreadScheduler { get; set; }
+        #endregion
     }
 }
