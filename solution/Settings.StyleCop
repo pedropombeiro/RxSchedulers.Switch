@@ -15,7 +15,7 @@
       </Rules>
       <AnalyzerSettings>
         <StringProperty Name="CompanyName">Pedro Pombeiro</StringProperty>
-        <StringProperty Name="Copyright">© 2012 Pedro Pombeiro. All rights reserved.</StringProperty>
+        <StringProperty Name="Copyright">© 2012-2013 Pedro Pombeiro. All rights reserved.</StringProperty>
       </AnalyzerSettings>
     </Analyzer>
   </Analyzers>

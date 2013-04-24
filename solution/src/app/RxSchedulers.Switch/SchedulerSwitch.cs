@@ -1,6 +1,6 @@
 ﻿// --------------------------------------------------------------------------------------------------------------------
 // <copyright file="SchedulerSwitch.cs" company="Pedro Pombeiro">
-//   © 2012 Pedro Pombeiro. All rights reserved.
+//   © 2012-2013 Pedro Pombeiro. All rights reserved.
 // </copyright>
 // --------------------------------------------------------------------------------------------------------------------
 namespace RxSchedulers.Switch
@@ -25,6 +25,7 @@ namespace RxSchedulers.Switch
             SchedulerSwitch.GetTaskPoolScheduler = () => TaskPoolScheduler.Default;
             SchedulerSwitch.GetCurrentThreadScheduler = () => CurrentThreadScheduler.Instance;
             SchedulerSwitch.GetNewThreadScheduler = () => NewThreadScheduler.Default;
+            SchedulerSwitch.GetThreadPoolScheduler = () => ThreadPoolScheduler.Instance;
         }
 
         #endregion
