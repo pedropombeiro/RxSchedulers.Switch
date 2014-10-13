@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
     <metadata>
         <id>RxSchedulers.Switch</id>
-        <version>2.2.4</version>
+        <version>2.2.5</version>
         <title>RxSchedulers.Switch</title>
         <authors>Pedro Pombeiro</authors>
         <owners>Pedro Pombeiro</owners>
@@ -10,10 +10,10 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Provides a way to abstract the retrieval of Rx schedulers, such that the actual logic can be replaced at any moment. Useful for unit testing Reactive Extensions.</description>
         <summary />
-        <copyright>Copyright © Pedro Pombeiro 2012-2013</copyright>
+        <copyright>Copyright © Pedro Pombeiro 2012-2014</copyright>
         <tags>Rx unit testing</tags>
         <dependencies>
-            <dependency id="Rx-XAML" version="2.2.4" />
+            <dependency id="Rx-XAML" version="2.2.5" />
         </dependencies>
         <frameworkAssemblies>
             <frameworkAssembly assemblyName="WindowsBase" targetFramework="" />
