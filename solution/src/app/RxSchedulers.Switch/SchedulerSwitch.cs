@@ -21,16 +21,20 @@ namespace RxSchedulers.Switch
         static SchedulerSwitch()
         {
             SchedulerSwitch.GetImmediateScheduler = () => Scheduler.Immediate;
+#if NET472
             SchedulerSwitch.GetDispatcherScheduler = () => DispatcherScheduler.Current;
+#else
+            SchedulerSwitch.GetDispatcherScheduler = () => throw new NotSupportedException("DispatcherScheduler is only available in full framework");
+#endif
             SchedulerSwitch.GetTaskPoolScheduler = () => TaskPoolScheduler.Default;
             SchedulerSwitch.GetCurrentThreadScheduler = () => CurrentThreadScheduler.Instance;
             SchedulerSwitch.GetNewThreadScheduler = () => NewThreadScheduler.Default;
             SchedulerSwitch.GetThreadPoolScheduler = () => ThreadPoolScheduler.Instance;
         }
 
-        #endregion
+#endregion
 
-        #region Public Properties
+#region Public Properties
 
         /// <summary>
         /// Gets or sets the current thread scheduler (normally <see cref="CurrentThreadScheduler.Instance"/>).
@@ -38,7 +42,7 @@ namespace RxSchedulers.Switch
         public static Func<IScheduler> GetCurrentThreadScheduler { get; set; }
 
         /// <summary>
-        /// Gets or sets the dispatcher scheduler (normally <see cref="DispatcherScheduler.Current"/>).
+        /// Gets or sets the dispatcher scheduler (normally DispatcherScheduler.Current).
         /// </summary>
         public static Func<IScheduler> GetDispatcherScheduler { get; set; }
 
@@ -62,6 +66,6 @@ namespace RxSchedulers.Switch
         /// </summary>
         public static Func<IScheduler> GetThreadPoolScheduler { get; set; }
 
-        #endregion
+#endregion
     }
 }
